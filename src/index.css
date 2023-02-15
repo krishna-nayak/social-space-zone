@@ -1,6 +1,11 @@
 body {
-  background: rgb(160, 160, 160);
+  background-color: #fff !important;
+  max-height: 100vh;
 }
+
+/* #root {
+  height: 100vh;
+} */
 
 #post {
   max-width: 540px;

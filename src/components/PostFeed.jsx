@@ -1,10 +1,10 @@
 import React from "react";
-import post from "../Data/post";
+// import post from "../Data/post";
 // import "./PostFeed.css";
 
-const PostFeed = () => {
+const PostFeed = ({ post }) => {
   return (
-    <div id="post" className="rounded">
+    <div id="post" className="rounded my-3 border shadow">
       <div className="d-flex align-items-center gap-2 mb-3">
         <img src={post.user.image} alt={post.user.username} id="profile-img" width="50" height="50" />
 
@@ -17,7 +17,7 @@ const PostFeed = () => {
           </div>
         </div>
       </div>
-      <img src={post.event.image} alt="post" id="image" width="400" height="200" className="rounded" />
+      <img src={post.event.image} alt="post" id="image" width="400" height="300" className="rounded" />
       <div>
         <div className="d-flex gap-2 py-3">
           <i className="fa-regular fa-heart"></i>
@@ -40,8 +40,12 @@ const PostFeed = () => {
       </div>
 
       <div>
-        <button className="btn btn-primary" style={{ width: "100%", backgroundColor: "purple" }}>
+        <button className="btn btn-primary" style={{ width: "100%" }}>
           Join
+        </button>
+        <button className="btn btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#participants" style={{ width: "100%" }}>
+          {" "}
+          View Participents
         </button>
       </div>
     </div>
