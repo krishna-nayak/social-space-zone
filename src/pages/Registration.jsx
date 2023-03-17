@@ -6,8 +6,8 @@ import "./Registration.css";
 
 const Registration = () => {
   return (
-    <section class="bg-dark">
-      <div class="container py-1 ">
+    <section class="bg-dark" style={{ minHeight: "100vh" }}>
+      <div class="container py-1">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col">
             <div class="card card-registration my-4">
@@ -19,17 +19,28 @@ const Registration = () => {
                     class="img-fluid"
                     width={"500"}
                     height={"80%"}
-                    style={{ objectFit: "cover", width: "100%", overflow: "hidden", height: "" }}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      overflow: "hidden",
+                      height: "",
+                    }}
                   />
                 </div>
                 <div class="col-xl-6">
                   <div class="card-body p-md-5 text-black">
-                    <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                    <h3 class="mb-5 text-uppercase">
+                      Student registration form
+                    </h3>
 
                     <div class="row">
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                          <input
+                            type="text"
+                            id="form3Example1m"
+                            class="form-control form-control-lg"
+                          />
                           <label class="form-label" for="form3Example1m">
                             First name
                           </label>
@@ -37,7 +48,11 @@ const Registration = () => {
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                          <input
+                            type="text"
+                            id="form3Example1n"
+                            class="form-control form-control-lg"
+                          />
                           <label class="form-label" for="form3Example1n">
                             Last name
                           </label>
@@ -46,7 +61,11 @@ const Registration = () => {
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                      <input
+                        type="text"
+                        id="form3Example8"
+                        class="form-control form-control-lg"
+                      />
                       <label class="form-label" for="form3Example8">
                         Address
                       </label>
@@ -56,21 +75,39 @@ const Registration = () => {
                       <h6 class="mb-0 me-4">Gender: </h6>
 
                       <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="option1" />
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="femaleGender"
+                          value="option1"
+                        />
                         <label class="form-check-label" for="femaleGender">
                           Female
                         </label>
                       </div>
 
                       <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="option2" />
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="maleGender"
+                          value="option2"
+                        />
                         <label class="form-check-label" for="maleGender">
                           Male
                         </label>
                       </div>
 
                       <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="option3" />
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="otherGender"
+                          value="option3"
+                        />
                         <label class="form-check-label" for="otherGender">
                           Other
                         </label>
@@ -104,14 +141,22 @@ const Registration = () => {
                     </div> */}
 
                     <div class="form-outline mb-4">
-                      <input type="text" id="form3Example90" class="form-control form-control-lg" />
+                      <input
+                        type="text"
+                        id="form3Example90"
+                        class="form-control form-control-lg"
+                      />
                       <label class="form-label" for="form3Example90">
                         Pincode
                       </label>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                      <input
+                        type="text"
+                        id="form3Example97"
+                        class="form-control form-control-lg"
+                      />
                       <label class="form-label" for="form3Example97">
                         Email ID
                       </label>

@@ -14,20 +14,12 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/registration" element={<Registration />} />
+        <Route path="/home" exact element={<Home />} />
+        <Route path="/profile" exact element={<Profile />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route exact path="/registration" element={<Registration />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <HeaderLayout>
-        <DashboardLayout>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </DashboardLayout>
-        <Routes>
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </HeaderLayout>
     </Router>
   );
 }
