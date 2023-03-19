@@ -4,7 +4,7 @@ import React from "react";
 
 const PostFeed = ({ post }) => {
   return (
-    <div id="post" className="rounded my-3 border shadow">
+    <div id="post" className="rounded mb-3 border shadow">
       <div className="d-flex align-items-center gap-2 mb-3">
         <img src={post.user.image} alt={post.user.username} id="profile-img" width="50" height="50" />
 

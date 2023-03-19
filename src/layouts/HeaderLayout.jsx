@@ -5,7 +5,7 @@ const HeaderLayout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <main style={{ paddingTop: "56px" }}>{children}</main>
     </>
   );
 };

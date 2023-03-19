@@ -1,15 +1,18 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import SideBar from "../components/SideBar";
 
 export default function DashboardLayout({ children }) {
   return (
     <>
-      <div className="row m-0 p-0">
-        <div className="col-3 px-0">
+      <Row>
+        <Col xl={2} lg={3}>
           <SideBar />
-        </div>
-        <div className="col px-0 mx-0 bg-light rounded">{children}</div>
-      </div>
+        </Col>
+        <Col xl={10} sm={9}>
+          {children}
+        </Col>
+      </Row>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FeedCollection from "../components/FeedCollection";
 import PostInputModal from "../components/PostInputModal";
 import ViewParticipents from "../components/ViewParticipants";
@@ -7,14 +7,14 @@ import HeaderLayout from "../layouts/HeaderLayout";
 
 const Home = () => {
   return (
-    <HeaderLayout>
-      <DashboardLayout>
-        <div className="bg-light">
-          <FeedCollection />
-          <ViewParticipents />
-        </div>
-      </DashboardLayout>
-    </HeaderLayout>
+    // <HeaderLayout>
+    <DashboardLayout>
+      <div className="bg-light">
+        <FeedCollection />
+        <ViewParticipents />
+      </div>
+    </DashboardLayout>
+    // </HeaderLayout>
   );
 };
 
