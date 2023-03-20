@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 
 const HeaderLayout = ({ children }) => {
+  // console.log(window.location.href);
   return (
     <>
       <Header />

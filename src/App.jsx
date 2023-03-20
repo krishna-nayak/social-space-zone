@@ -10,16 +10,12 @@ import React from "react";
 import PageContent from "./components/PageContent";
 import HeaderLayout from "./layouts/HeaderLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
-// const Home = React.lazy(() => import("./pages/Home"));
-// const Profile = React.lazy(() => import("./pages/Profile"));
-// const Login = React.lazy(() => import("./pages/Login"));
-// const Registration = React.lazy(() => import("./pages/Registration"));
 
 function App() {
   return (
-    <HeaderLayout>
-      <PageContent />
-    </HeaderLayout>
+    // <HeaderLayout>
+    <PageContent />
+    // </HeaderLayout>
   );
 }
 

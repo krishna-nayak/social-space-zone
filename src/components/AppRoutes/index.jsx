@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import DashboardLayout from "../../layouts/DashboardLayout";
 import Home from "../../pages/Home";
 import Login from "../../pages/Login";
@@ -8,15 +8,11 @@ import Registration from "../../pages/Registration";
 
 const Index = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/profile" exact element={<Profile />} />
-        <Route path="/login" exact element={<Login />} />
-        <Route exact path="/registration" element={<Registration />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/login" exact element={<Login />} />
+      <Route exact path="/registration" element={<Registration />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
 };
 
