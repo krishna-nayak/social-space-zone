@@ -1,23 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DashboardLayout from "../../layouts/DashboardLayout";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
 import HeaderLayout from "../../layouts/HeaderLayout";
 
 import AppRoutes from "../AppRoutes";
 import DashboardRoute from "../DashboardRoutes/DashboardRoutes";
+
+const Layout = () => (
+  <HeaderLayout>
+    <DashboardRoute />
+  </HeaderLayout>
+);
+
 const Index = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to="/social" />} />
         <Route path="/*" element={<AppRoutes />} />
-        <Route
-          path="/social/*"
-          element={
-            <HeaderLayout>
-              <DashboardRoute />
-            </HeaderLayout>
-          }
-        />
+        <Route path="/social/*" element={<Layout />} />
       </Routes>
     </Router>
   );

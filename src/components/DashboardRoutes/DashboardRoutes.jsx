@@ -1,21 +1,24 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import DashboardLayout from "../../layouts/DashboardLayout";
+
 import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
 import Community from "../../pages/Community";
 import Explore from "../../pages/Explore";
 import Notification from "../../pages/Notification";
+import { PrivateWrapper } from "../../utils/PrivateWrapper";
 
 const DashboardRoute = () => {
   return (
     <Routes>
-      <Route path="/" exact element={<Home />} />
-      <Route path="/profile" exact element={<Profile />} />
-      <Route path="/community" exact element={<Community />} />
-      <Route path="/explore" exact element={<Explore />} />
-      <Route path="/notification" exact element={<Notification />} />
-      <Route path="*" element={<PageNotFound />} />
+      <Route element={<PrivateWrapper />}>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/profile" exact element={<Profile />} />
+        <Route path="/community" exact element={<Community />} />
+        <Route path="/explore" exact element={<Explore />} />
+        <Route path="/notification" exact element={<Notification />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
     </Routes>
   );
 };
