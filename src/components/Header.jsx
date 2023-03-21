@@ -17,7 +17,7 @@ const Header = () => {
             </Form>
           </Nav>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="flex-grow-0">
             <Nav className="ms-auto">
               <NavDropdown title={"John"} align="end" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

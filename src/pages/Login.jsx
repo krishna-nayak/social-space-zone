@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 import { validateEmail, validatePassword } from "../utils/validation";
 
 import "./Login.css";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
@@ -18,8 +22,27 @@ const Login = () => {
 
     if (!validatePassword(password)) alert("Invalid password");
 
-    if (validateEmail(email) && validatePassword(password)) alert("Success");
+    if (validateEmail(email) && validatePassword(password)) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          localStorage.setItem("user_token", user.accessToken);
+          // route to dashboard
+          navigate("/social");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+          alert(errorMessage);
+        });
+    }
   };
+  useEffect(() => {
+    if (localStorage.getItem("user_token")) navigate("/social");
+  }, []);
 
   return (
     <div className="auth-wrapper">

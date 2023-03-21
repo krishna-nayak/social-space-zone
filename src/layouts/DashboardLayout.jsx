@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }) {
           <SideBar />
         </Col>
         <Col xl={10} sm={9} className="px-0">
-          <Container>{children}</Container>
+          <Container fluid>{children}</Container>
         </Col>
       </Row>
     </Container>
