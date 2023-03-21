@@ -28,8 +28,12 @@ const sideMenu = [
 const SideBar = () => {
   const [active, setActive] = useState("/");
   const navigate = useNavigate();
-  const handleSelect = (eventKey) => navigate(eventKey);
-
+  const handleSelect = (eventKey) => {
+    if (eventKey === "/logout") {
+      localStorage.removeItem("user_token");
+      navigate("/login");
+    } else navigate(eventKey);
+  };
   useEffect(() => {
     setActive(window.location.pathname);
   }, []);
