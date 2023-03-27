@@ -10,11 +10,15 @@ import React from "react";
 import PageContent from "./components/PageContent";
 import HeaderLayout from "./layouts/HeaderLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
+import { Provider } from "react-redux";
+import { store } from "./slice/store";
 
 function App() {
   return (
     // <HeaderLayout>
-    <PageContent />
+    <Provider store={store}>
+      <PageContent />
+    </Provider>
     // </HeaderLayout>
   );
 }
