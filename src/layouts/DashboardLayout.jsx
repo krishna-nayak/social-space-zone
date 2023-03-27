@@ -6,9 +6,12 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 import SideBar from "../components/SideBar";
+import { useDispatch } from "react-redux";
+import { setUser } from "../slice/features/user/userSlice";
 
 export default function DashboardLayout({ children }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!localStorage.getItem("user_token")) navigate("/login");
@@ -16,6 +19,9 @@ export default function DashboardLayout({ children }) {
       if (!user) {
         localStorage.removeItem("user_token");
         navigate("/login");
+      } else {
+        console.log("user", user.accessToken);
+        dispatch(setUser({ name: user.displayName, email: user.email }));
       }
     });
   }, []);

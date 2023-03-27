@@ -12,11 +12,7 @@ import { IoIosNotifications } from "react-icons/io";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 
-const styles = {
-  color: {
-    bgNav: "#fff",
-  },
-};
+import "./SideBar.css";
 
 const sideMenu = [
   { name: "Feed", link: "/social", icon: <ImFeed size={24} /> },
@@ -52,7 +48,7 @@ const SideBar = () => {
   return (
     <Nav variant="pills" className="flex-column position-sticky" style={{ top: "70px" }} activeKey={active} onSelect={handleSelect}>
       {sideMenu.map((item, index) => (
-        <Nav.Item key={index} className="mx-4 my-1">
+        <Nav.Item key={index} className="mx-4 my-1 ">
           <Nav.Link eventKey={item.link} className="d-flex align-items-center">
             <span>{item.icon}</span> <span className="ms-3">{item.name}</span>
           </Nav.Link>

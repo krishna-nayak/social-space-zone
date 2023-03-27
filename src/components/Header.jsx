@@ -2,8 +2,11 @@ import React from "react";
 import { Button, Container, Form, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
 import PostInputModal from "./PostInputModal";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useSelector } from "react-redux";
+import { selectUser } from "../slice/features/user/userSlice";
 
 const Header = () => {
+  const user = useSelector(selectUser);
   return (
     <header>
       <Navbar bg="light" expand="lg" fixed="top">
@@ -19,7 +22,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="flex-grow-0">
             <Nav className="ms-auto">
-              <NavDropdown title={"John"} align="end" id="basic-nav-dropdown">
+              <NavDropdown title={user.name} align="end" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
