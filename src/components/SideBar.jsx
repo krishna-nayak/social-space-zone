@@ -9,6 +9,8 @@ import { FiLogOut } from "react-icons/fi";
 import { HiUserGroup } from "react-icons/hi";
 import { MdTravelExplore } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 
 const styles = {
   color: {
@@ -30,10 +32,19 @@ const SideBar = () => {
   const navigate = useNavigate();
   const handleSelect = (eventKey) => {
     if (eventKey === "/logout") {
-      localStorage.removeItem("user_token");
-      navigate("/login");
+      signOut(auth)
+        .then(() => {
+          console.log("User firbase is signed out");
+          localStorage.removeItem("user_token");
+          navigate("/login");
+        })
+        .catch((error) => {
+          console.log("User firbase is signed out ERROR");
+          alert("Error on logout");
+        });
     } else navigate(eventKey);
   };
+
   useEffect(() => {
     setActive(window.location.pathname);
   }, []);

@@ -25,11 +25,9 @@ const Login = () => {
     if (validateEmail(email) && validatePassword(password)) {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Signed in
           const user = userCredential.user;
           console.log(user);
           localStorage.setItem("user_token", user.accessToken);
-          // route to dashboard
           navigate("/social");
         })
         .catch((error) => {
@@ -40,6 +38,7 @@ const Login = () => {
         });
     }
   };
+
   useEffect(() => {
     if (localStorage.getItem("user_token")) navigate("/social");
   }, []);
