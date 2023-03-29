@@ -13,10 +13,10 @@ const DashboardRoute = () => {
     <Routes>
       <Route element={<PrivateWrapper />}>
         <Route path="/" exact element={<Home />} />
-        <Route path="/profile" exact element={<Profile />} />
         <Route path="/community" exact element={<Community />} />
         <Route path="/explore" exact element={<Explore />} />
         <Route path="/notification" exact element={<Notification />} />
+        <Route path="/profile/:id" exact element={<Profile />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>

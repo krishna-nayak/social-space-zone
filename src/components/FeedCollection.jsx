@@ -11,13 +11,10 @@ const FeedCollection = () => {
     callBack();
     async function callBack() {
       const postsRef = collection(db, "posts");
-      const lastThreeRes = query(postsRef, limit(3));
+      const lastThreeRes = query(postsRef, limit(8));
       const querySnapshot = await getDocs(lastThreeRes);
       const postData = [];
-      querySnapshot.forEach((doc) => {
-        console.log(doc.data());
-        postData.push(doc.data());
-      });
+      querySnapshot.forEach((doc) => postData.push(doc.data()));
       setFeedCollection(postData);
     }
   }, []);

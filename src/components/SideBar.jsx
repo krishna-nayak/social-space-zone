@@ -11,21 +11,25 @@ import { MdTravelExplore } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
-
-import "./SideBar.css";
-
-const sideMenu = [
-  { name: "Feed", link: "/social", icon: <ImFeed size={24} /> },
-  { name: "My community", link: "/social/community", icon: <HiUserGroup size={24} /> },
-  { name: "Explore", link: "/social/explore", icon: <MdTravelExplore size={24} /> },
-  { name: "Notification", link: "/social/notification", icon: <IoIosNotifications size={24} /> },
-  { name: "Profile", link: "/social/profile", icon: <CgProfile size={24} /> },
-  { name: "logout", link: "/logout", icon: <FiLogOut size={24} /> },
-];
+import { useSelector } from "react-redux";
+import { selectUser } from "../slice/features/user/userSlice";
 
 const SideBar = () => {
   const [active, setActive] = useState("/");
   const navigate = useNavigate();
+
+  const userUid = useSelector(selectUser);
+
+  // side menu data
+  const sideMenu = [
+    { name: "Feed", link: "/social", icon: <ImFeed size={24} /> },
+    // { name: "My community", link: "/social/community", icon: <HiUserGroup size={24} /> },
+    // { name: "Explore", link: "/social/explore", icon: <MdTravelExplore size={24} /> },
+    // { name: "Notification", link: "/social/notification", icon: <IoIosNotifications size={24} /> },
+    { name: "Profile", link: "/social/profile/" + userUid.uid, icon: <CgProfile size={24} /> },
+    { name: "logout", link: "/logout", icon: <FiLogOut size={24} /> },
+  ];
+
   const handleSelect = (eventKey) => {
     if (eventKey === "/logout") {
       signOut(auth)
