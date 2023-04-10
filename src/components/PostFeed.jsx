@@ -1,8 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../slice/features/user/userSlice";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
 // import post from "../Data/post";
 // import "./PostFeed.css";
 
 const PostFeed = ({ post }) => {
+  const user = useSelector(selectUser);
+  const handleJoinBtn = async () => {
+    // handle join button click
+    alert("Join button clicked " + post.id + "\n" + user.uid);
+    // add user id to participants in post collection
+    const postRef = doc(db, "posts", post.id);
+    // postRef get data as user id
+    await updateDoc(postRef, {
+      paticipicare: [{ user: 1, name: "name", image: "image" }],
+    });
+    console.log("postRef", postRef.data);
+  };
   return (
     <div id="post" className="rounded mb-3 border shadow">
       <div className="d-flex align-items-center gap-2 mb-3">
@@ -40,7 +56,7 @@ const PostFeed = ({ post }) => {
       </div>
 
       <div>
-        <button className="btn btn-primary" style={{ width: "100%" }}>
+        <button className="btn btn-primary" onClick={() => handleJoinBtn()} style={{ width: "100%" }}>
           Join
         </button>
         <button className="btn btn-outline-secondary mt-2" data-bs-toggle="modal" data-bs-target="#participants" style={{ width: "100%" }}>

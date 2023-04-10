@@ -20,7 +20,6 @@ export default function DashboardLayout({ children }) {
         localStorage.removeItem("user_token");
         navigate("/login");
       } else {
-        // console.log("user", user);
         dispatch(setUser({ name: user.displayName, email: user.email, uid: user.uid, username: user.email.split("@")[0] }));
       }
     });

@@ -31,7 +31,7 @@ const Profile = () => {
         navigate("/social");
       } else {
         docSnap.forEach((doc) => {
-          console.log(doc.id, "=>", doc.data());
+          // console.log(doc.id, "=>", doc.data());
           setProfileData(doc.data());
         });
       }

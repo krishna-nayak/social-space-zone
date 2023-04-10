@@ -14,7 +14,8 @@ const FeedCollection = () => {
       const lastThreeRes = query(postsRef, limit(8));
       const querySnapshot = await getDocs(lastThreeRes);
       const postData = [];
-      querySnapshot.forEach((doc) => postData.push(doc.data()));
+      querySnapshot.forEach((doc) => postData.push({ ...doc.data(), id: doc.id }));
+
       setFeedCollection(postData);
     }
   }, []);
