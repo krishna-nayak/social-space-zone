@@ -5,7 +5,7 @@ export function validateEmail(email) {
 }
 
 export function validatePassword(password) {
-  // must contain specal character, number, uppercase and lowercase 8 character
+  // must contain special character, number, uppercase and lowercase 8 character
   const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
   return re.test(password);
 }
