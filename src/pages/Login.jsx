@@ -18,11 +18,11 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = userInfo;
-    if (!validateEmail(email)) alert("Invalid email");
+    //if (!validateEmail(email)) alert("Invalid email");
 
-    if (!validatePassword(password)) alert("Invalid password");
+    // if (!validatePassword(password)) alert("Invalid password");
 
-    if (validateEmail(email) && validatePassword(password)) {
+    if (validateEmail(email)) {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
@@ -50,15 +50,31 @@ const Login = () => {
           <h3>Sign In</h3>
           <div className="mb-3">
             <label>Email address</label>
-            <input type="email" className="form-control" name="email" placeholder="Enter email" onChange={handleChange} />
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              placeholder="Enter email"
+              onChange={handleChange}
+            />
           </div>
           <div className="mb-3">
             <label>Password</label>
-            <input type="password" className="form-control" name="password" placeholder="Enter password" onChange={handleChange} />
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder="Enter password"
+              onChange={handleChange}
+            />
           </div>
           <div className="mb-3">
             <div className="custom-control custom-checkbox">
-              <input type="checkbox" className="custom-control-input" id="customCheck1" />
+              <input
+                type="checkbox"
+                className="custom-control-input"
+                id="customCheck1"
+              />
               <label className="custom-control-label" htmlFor="customCheck1">
                 Remember me
               </label>
