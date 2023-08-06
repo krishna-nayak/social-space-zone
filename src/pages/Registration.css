@@ -8,7 +8,8 @@
   color: #333;
 }
 
-.card-registration .select-input.form-control[readonly]:not([disabled])::placeholder {
+.card-registration
+  .select-input.form-control[readonly]:not([disabled])::placeholder {
   color: #888;
 }
 

@@ -6,7 +6,7 @@ import { validateEmail, validatePassword } from "../utils/validation";
 
 import "./Login.css";
 
-const Login = () => {
+function Login() {
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
 
@@ -18,14 +18,14 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = userInfo;
-    //if (!validateEmail(email)) alert("Invalid email");
+    // if (!validateEmail(email)) alert("Invalid email");
 
     // if (!validatePassword(password)) alert("Invalid password");
 
     if (validateEmail(email)) {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          const user = userCredential.user;
+          const { user } = userCredential;
           console.log(user);
           localStorage.setItem("user_token", user.accessToken);
           navigate("/social");
@@ -86,12 +86,13 @@ const Login = () => {
             </button>
           </div>
           <p className="forgot-password text-right">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             Forgot <a href="#">password?</a>
           </p>
         </form>
       </div>
     </div>
   );
-};
+}
 
 export default Login;

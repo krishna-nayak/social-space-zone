@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { validateEmail, validatePassword } from "../utils/validation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { validateEmail, validatePassword } from "../utils/validation";
 
 import "./Login.css";
 import { auth } from "../firebase";
 
-const Registration = () => {
+function Registration() {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -38,6 +38,7 @@ const Registration = () => {
       user;
     if (
       !firstName ||
+      !lastName ||
       !email ||
       !city ||
       !password ||
@@ -54,15 +55,18 @@ const Registration = () => {
     } else if (password !== confirmPassword) {
       alert("Passwords do not match");
     } else {
-      alert("Success");
+      // alert("Success");
       console.log(user);
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          const user = userCredential.user;
+          // eslint-disable-next-line no-shadow
+          const { user } = userCredential;
+          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
         });
     }
   };
@@ -153,6 +157,6 @@ const Registration = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Registration;

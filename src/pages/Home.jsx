@@ -6,7 +6,7 @@ import ViewParticipents from "../components/ViewParticipants";
 import DashboardLayout from "../layouts/DashboardLayout";
 import HeaderLayout from "../layouts/HeaderLayout";
 
-const Home = () => {
+function Home() {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   return (
@@ -25,6 +25,6 @@ const Home = () => {
     </DashboardLayout>
     // </HeaderLayout>
   );
-};
+}
 
 export default Home;
