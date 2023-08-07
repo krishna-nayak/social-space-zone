@@ -23,8 +23,8 @@ function Registration() {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if (file.size > 1024 * 1024) {
-      alert("Image size should be less than 1 MB");
+    if (file.size > 1024 * 1024 * 1024) {
+      alert("Image size should be less than 2 MB");
     } else if (!["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
       alert("Invalid file format. Only JPEG, PNG, and JPG are allowed.");
     } else {
@@ -136,7 +136,7 @@ function Registration() {
             />
           </div>
           <div className="mb-3">
-            <label>Upload Image (max size 1MB)</label>
+            <label>Upload Image (max size 2MB)</label>
             <input
               type="file"
               className="form-control"
