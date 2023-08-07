@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { validateEmail, validatePassword } from "../utils/validation";
+import { addDoc, collection } from "firebase/firestore";
 
+import { validateEmail, validatePassword } from "../utils/validation";
+import { auth, db } from "../firebase";
 import "./Login.css";
-import { auth } from "../firebase";
 
 function Registration() {
-  const [user, setUser] = useState({
+  const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -18,7 +20,7 @@ function Registration() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
+    setUserDetails({ ...userDetails, [name]: value });
   };
 
   const handleImageChange = (e) => {
@@ -35,15 +37,14 @@ function Registration() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { firstName, lastName, email, city, password, confirmPassword } =
-      user;
+      userDetails;
     if (
       !firstName ||
       !lastName ||
       !email ||
       !city ||
       !password ||
-      !confirmPassword ||
-      !image
+      !confirmPassword
     ) {
       alert("All fields are required");
     } else if (!validateEmail(email)) {
@@ -55,13 +56,19 @@ function Registration() {
     } else if (password !== confirmPassword) {
       alert("Passwords do not match");
     } else {
-      // alert("Success");
-      console.log(user);
+      alert("Success");
       createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
           // eslint-disable-next-line no-shadow
           const { user } = userCredential;
           console.log(user);
+          await addDoc(collection(db, "users"), {
+            firstName,
+            lastName,
+            email,
+            city,
+            uid: user.uid,
+          });
         })
         .catch((error) => {
           const errorCode = error.code;
