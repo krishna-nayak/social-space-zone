@@ -158,7 +158,7 @@ function Registration() {
             </button>
           </div>
           <p className="forgot-password text-right">
-            Already Registered ? <a href="/login">log in</a>
+            Already Registered ? <Link to="/login">log in</Link>
           </p>
         </form>
       </div>
