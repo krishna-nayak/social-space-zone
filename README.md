@@ -19,6 +19,8 @@ Welcome to Social-Space-Zone! 🌟
 
 # Quick Start🚀 <a name="quickstart"></a>
 
+
+
 1. Fork the Project
 2. Clone your forked repository
 
@@ -64,7 +66,7 @@ git add .
 or
 
 ```sh
-git add <file_name1> <file_name2>
+git add .
 ```
 
 5. Commit your changes
@@ -81,6 +83,7 @@ git push origin fix-issue-<ISSUE-NUMBER>
 
 7. Open a Pull Request
 
+☢️We follow some strict code formatting rules.☢️Happy coding !
 
 # Contributor ✨
 
