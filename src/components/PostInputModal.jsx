@@ -59,7 +59,6 @@ function PostInputModal({ show, setShow }) {
     resetData();
     handleClose();
     window.location.reload();
-
     alert("Post Created!");
   };
 
