@@ -26,7 +26,7 @@ function Login() {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const { user } = userCredential;
-          console.log(user);
+          // console.log(user);
           localStorage.setItem("user_token", user.accessToken);
           navigate("/social");
         })

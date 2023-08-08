@@ -143,7 +143,7 @@ function Registration() {
             />
           </div>
           <div className="mb-3">
-            <label>Upload Image (max size 2MB)</label>
+            <label>Upload Image (max size 1MB)</label>
             <input
               type="file"
               className="form-control"
@@ -158,7 +158,7 @@ function Registration() {
             </button>
           </div>
           <p className="forgot-password text-right">
-            Already Registered ? <Link to="/login">log in</Link>
+            Already Registered ? <a href="/login">log in</a>
           </p>
         </form>
       </div>
