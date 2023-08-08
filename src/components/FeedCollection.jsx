@@ -19,7 +19,7 @@ function FeedCollection() {
       setFeedCollection(postData);
     }
     callBack();
-  }, []);
+  }, [feedCollection, setFeedCollection]);
 
   return (
     <div className="py-4">
