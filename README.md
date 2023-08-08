@@ -4,9 +4,6 @@
 </div>
 
 # Introduction <a name="introduction"></a>
-
-Welcome👋
-
 <p> 
 Welcome to Social-Space-Zone! 🌟 
 </p>
@@ -15,10 +12,9 @@ Welcome to Social-Space-Zone! 🌟
 
 # Features🌟 <a name="features"></a>
 
-🎉  This web application provides user their own social platform to **find events** multiple events.<br/>
-🎉  Moreover this provides exclusive opportunities to **find team mates** for any events .<br/>
+🎉  This web application provides user their own social platform to multiple **find events**.<br/>
+🎉  Moreover this provides exclusive opportunities to **find your team mates** for any events .<br/>
 🎉  Our platform provides users to manage the events/post as well as **manage** the upcoming requests from the members to join the team.<br/>
-
 
 
 # Quick Start🚀 <a name="quickstart"></a>
@@ -95,7 +91,7 @@ git push origin fix-issue-<ISSUE-NUMBER>
 
 
  <div align="center">
-<h1>Thankyou</h1>
+<h1>✨Thankyou✨</h1>
 </div>
 
 
