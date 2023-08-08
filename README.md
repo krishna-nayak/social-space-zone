@@ -15,9 +15,9 @@ Welcome to Social-Space-Zone! 🌟
 
 # Features🌟 <a name="features"></a>
 
-🎉  This web application provides user their own social platform to **find events** multiple events.
-🎉  Moreover this provides exclusive opportunities to **find team mates** for any events .
-🎉  Our platform provides users to manage the events/post as well as **manage** the upcoming requests from the members to join the team.
+🎉  This web application provides user their own social platform to **find events** multiple events.<br/>
+🎉  Moreover this provides exclusive opportunities to **find team mates** for any events .<br/>
+🎉  Our platform provides users to manage the events/post as well as **manage** the upcoming requests from the members to join the team.<br/>
 
 
 
@@ -89,7 +89,8 @@ git push origin fix-issue-<ISSUE-NUMBER>
 # Contributor ✨
 
 <a href="https://github.com/krishna-nayak/social-space-zone/graphs/contributors">
-
+ <img src="https://contrib.rocks/image?repo=krishna-nayak/social-space-zone" />
+</a>
 
 
 
