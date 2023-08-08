@@ -10,8 +10,7 @@ Welcome👋
 <p> 
 Welcome to Social-Space-Zone! 🌟 
 </p>
-<center><img src="https://imgur.com/DvEZnW7.png" /></center>
-<center><img src="https://imgur.com/B1yHPt2.png" /></center>
+
 <br/>
 
 # Features🌟 <a name="features"></a>
