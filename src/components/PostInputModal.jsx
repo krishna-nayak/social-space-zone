@@ -56,6 +56,7 @@ function PostInputModal({ show, setShow }) {
       },
       ...postData,
     });
+
     resetData();
     handleClose();
     window.location.reload();
