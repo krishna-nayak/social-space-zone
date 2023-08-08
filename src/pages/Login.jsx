@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { validateEmail, validatePassword } from "../utils/validation";
 
@@ -86,8 +86,11 @@ function Login() {
             </button>
           </div>
           <p className="forgot-password text-right">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            Forgot <a href="#">password?</a>
+            Forgot <Link to="/login">password?</Link>
+          </p>
+
+          <p className="forgot-password text-right">
+            Create a new account <Link to="/registration">registration</Link>
           </p>
         </form>
       </div>
