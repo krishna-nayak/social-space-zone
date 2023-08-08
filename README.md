@@ -27,12 +27,12 @@ Welcome to Social-Space-Zone! 🌟
 2. Clone your forked repository
 
 ```sh
-git clone https://github.com/<your_github_username>/OSCodeCommunitySite.git
+git clone https://github.com/<your_github_username>/social-space-zone.git
 ```
 3. Run the following command to change the working directory
 
 ```sh
-cd OSCodeCommunitySite
+cd social-space-zone
 ```
 
 4. Run the following command to install all the dependencies
