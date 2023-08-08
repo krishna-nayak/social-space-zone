@@ -63,12 +63,6 @@ git status -s
 git add .
 ```
 
-or
-
-```sh
-git add .
-```
-
 5. Commit your changes
 
 ```sh
