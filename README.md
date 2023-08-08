@@ -79,6 +79,12 @@ git push origin fix-issue-<ISSUE-NUMBER>
 
 ☢️We follow some strict code formatting rules.☢️Happy coding !
 
+*Please enable prettier code formatter or follow before pushing the code👇*
+
+```sh
+npm run format
+```
+
 # Contributor ✨
 
 <a href="https://github.com/krishna-nayak/social-space-zone/graphs/contributors">
