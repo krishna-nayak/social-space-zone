@@ -49,17 +49,7 @@ function PostFeed({ post }) {
         className="rounded"
       />
       <div>
-        {/* <Likes /> */}
-        {/* <div className="d-flex gap-2 py-3">
-          <i className="fa-regular fa-heart" />
-          <i className="fa-regular fa-comment" />
-          <i className="fa-solid fa-arrow-up-from-bracket" />
-          <i className="fa-regular fa-bookmark block ms-auto" />
-        </div> */}
-        <div>
-          {user && <LikesOnPost id={post.id} likes={post.likes} />}
-          {/* <p>{post.likes ? <span>{post.likes.length}</span> : "0"}</p> */}
-        </div>
+        <div>{user && <LikesOnPost id={post.id} likes={post.likes} />}</div>
         <div className="m-0">
           <p className="m-0 fw-bold">{post.event.name}</p>
           <p className="mb-3" style={{ fontSize: "14px" }}>

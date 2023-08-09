@@ -17,11 +17,17 @@ function Registration() {
     confirmPassword: "",
   });
   const [image, setImage] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserDetails({ ...userDetails, [name]: value });
   };
+
+  const handlePasswordShows = () => setShowPassword((prevValue) => !prevValue);
+  const handleConfirmPasswordShows = () =>
+    setShowConfirmPassword((prevValue) => !prevValue);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -124,26 +130,55 @@ function Registration() {
           </div>
           <div className="mb-3">
             <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              onChange={handleChange}
-              placeholder="Strong password recommended"
-            />
+            <div className="position-relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                name="password"
+                onChange={handleChange}
+                placeholder="Strong password recommended"
+              />
+              <div
+                className="position-absolute top-50 translate-middle-y"
+                style={{ right: "12px" }}
+                onClick={handlePasswordShows}
+                aria-hidden="true"
+              >
+                {showPassword ? (
+                  <i className="fa fa-eye" />
+                ) : (
+                  <i className="fas fa-eye-slash" />
+                )}
+              </div>
+            </div>
           </div>
           <div className="mb-3">
             <label>Confirm Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="confirmPassword"
-              onChange={handleChange}
-              placeholder="Confirm password"
-            />
+            <div className="position-relative">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                className="form-control"
+                name="confirmPassword"
+                onChange={handleChange}
+                placeholder="Confirm password"
+              />
+
+              <div
+                className="position-absolute top-50 translate-middle-y"
+                style={{ right: "12px" }}
+                onClick={handleConfirmPasswordShows}
+                aria-hidden="true"
+              >
+                {showConfirmPassword ? (
+                  <i className="fa fa-eye" />
+                ) : (
+                  <i className="fas fa-eye-slash" />
+                )}
+              </div>
+            </div>
           </div>
           <div className="mb-3">
-            <label>Upload Image (max size 2MB)</label>
+            <label>Upload Image (max size 1MB)</label>
             <input
               type="file"
               className="form-control"
@@ -158,7 +193,7 @@ function Registration() {
             </button>
           </div>
           <p className="forgot-password text-right">
-            Already Registered ? <Link to="/login">log in</Link>
+            Already Registered ? <a href="/login">log in</a>
           </p>
         </form>
       </div>
