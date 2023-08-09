@@ -29,6 +29,16 @@ function PostInputModal({ show, setShow }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      postData.event_name.trim() === "" ||
+      postData.description.trim() === "" ||
+      postData.location.trim() === "" ||
+      postData.date.trim() === "" ||
+      postData.image_url.trim() === ""
+    ) {
+      alert("Please fill in all fields");
+      return;
+    }
     console.log(postData);
     await addDoc(collection(db, "posts"), {
       user: {
