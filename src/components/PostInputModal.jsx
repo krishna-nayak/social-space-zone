@@ -50,7 +50,7 @@ function PostInputModal({ show, setShow }) {
         location: "bhubneswar",
       },
 
-      likes: 1,
+      likes: [],
       comments: 6,
       shares: 2,
       event: {
