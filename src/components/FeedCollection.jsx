@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  collection,
-  collectionGroup,
-  getDocs,
-  limit,
-  query,
-} from "firebase/firestore";
+import { collectionGroup, getDocs, limit, query } from "firebase/firestore";
 import PostFeed from "./PostFeed";
 // import { feedCollection } from "../Data/feedCollection";
 import { db } from "../firebase";
