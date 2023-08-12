@@ -9,11 +9,14 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserInfo({ ...userInfo, [name]: value });
   };
+
+  const handlePasswordShows = () => setShowPassword((prevValue) => !prevValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +29,7 @@ function Login() {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const { user } = userCredential;
-          console.log(user);
+          // console.log(user);
           localStorage.setItem("user_token", user.accessToken);
           navigate("/social");
         })
@@ -60,13 +63,27 @@ function Login() {
           </div>
           <div className="mb-3">
             <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              placeholder="Enter password"
-              onChange={handleChange}
-            />
+            <div className="position-relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                name="password"
+                placeholder="Enter password"
+                onChange={handleChange}
+              />
+              <div
+                className="position-absolute top-50 translate-middle-y"
+                style={{ right: "12px" }}
+                onClick={handlePasswordShows}
+                aria-hidden="true"
+              >
+                {showPassword ? (
+                  <i className="fa fa-eye" />
+                ) : (
+                  <i className="fas fa-eye-slash" />
+                )}
+              </div>
+            </div>
           </div>
           <div className="mb-3">
             <div className="custom-control custom-checkbox">

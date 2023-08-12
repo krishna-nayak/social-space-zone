@@ -5,8 +5,6 @@
 
 # Introduction <a name="introduction"></a>
 
-Welcome👋
-
 <p> 
 Welcome to Social-Space-Zone! 🌟 
 </p>
@@ -15,9 +13,11 @@ Welcome to Social-Space-Zone! 🌟
 
 # Features🌟 <a name="features"></a>
 
-🎉 This web application provides user their own social platform to **find events** multiple events.
-🎉 Moreover this provides exclusive opportunities to **find team mates** for any events .
-🎉 Our platform provides users to manage the events/post as well as **manage** the upcoming requests from the members to join the team.
+
+🎉 This web application provides user their own social platform to multiple **find events**.<br/>
+🎉 Moreover this provides exclusive opportunities to **find your team mates** for any events .<br/>
+🎉 Our platform provides users to manage the events/post as well as **manage** the upcoming requests from the members to join the team.<br/>
+
 
 # Quick Start🚀 <a name="quickstart"></a>
 
@@ -65,12 +65,6 @@ git status -s
 git add .
 ```
 
-or
-
-```sh
-git add <file_name1> <file_name2>
-```
-
 5. Commit your changes
 
 ```sh
@@ -85,12 +79,23 @@ git push origin fix-issue-<ISSUE-NUMBER>
 
 7. Open a Pull Request
 
+
+☢️We follow some strict code formatting rules.☢️Happy coding !
+
+_Please enable prettier code formatter or follow before pushing the code👇_
+
+```sh
+npm run format
+```
+
 # Contributor ✨
 
 <a href="https://github.com/krishna-nayak/social-space-zone/graphs/contributors">
+ <img src="https://contrib.rocks/image?repo=krishna-nayak/social-space-zone" />
+</a>
 
  <div align="center">
-<h1>Thankyou</h1>
+<h1>✨Thankyou✨</h1>
 </div>
 
 # License
