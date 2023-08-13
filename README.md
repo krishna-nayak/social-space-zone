@@ -13,9 +13,11 @@ Welcome to Social-Space-Zone! 🌟
 
 # Features🌟 <a name="features"></a>
 
+
 🎉 This web application provides user their own social platform to multiple **find events**.<br/>
 🎉 Moreover this provides exclusive opportunities to **find your team mates** for any events .<br/>
 🎉 Our platform provides users to manage the events/post as well as **manage** the upcoming requests from the members to join the team.<br/>
+
 
 # Quick Start🚀 <a name="quickstart"></a>
 
@@ -76,6 +78,7 @@ git push origin fix-issue-<ISSUE-NUMBER>
 ```
 
 7. Open a Pull Request
+
 
 ☢️We follow some strict code formatting rules.☢️Happy coding !
 
