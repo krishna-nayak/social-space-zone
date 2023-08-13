@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  AiFillHeart,
-  AiOutlineShareAlt,
-  AiOutlineComment,
-} from "react-icons/ai";
+import { AiFillHeart, AiOutlineComment } from "react-icons/ai";
 import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebase";
+import ShareOnPost from "./ShareOnPost";
 
 function LikesOnPost({ id, likes }) {
   const [user] = useAuthState(auth);
@@ -48,7 +45,7 @@ function LikesOnPost({ id, likes }) {
         <AiOutlineComment size={20} style={{ cursor: "pointer" }} />
       </i>
       <i>
-        <AiOutlineShareAlt size={20} style={{ cursor: "pointer" }} />
+        <ShareOnPost />
       </i>
     </div>
   );
