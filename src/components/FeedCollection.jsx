@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { collection, getDocs, limit, query } from "firebase/firestore";
+import { collectionGroup, getDocs, limit, query } from "firebase/firestore";
 import PostFeed from "./PostFeed";
 // import { feedCollection } from "../Data/feedCollection";
 import { db } from "../firebase";
@@ -9,13 +9,14 @@ function FeedCollection() {
 
   useEffect(() => {
     async function callBack() {
-      const postsRef = collection(db, "posts");
+      const postsRef = collectionGroup(db, "posts");
       const lastThreeRes = query(postsRef, limit(8));
       const querySnapshot = await getDocs(lastThreeRes);
       const postData = [];
       querySnapshot.forEach((doc) =>
         postData.push({ ...doc.data(), id: doc.id })
       );
+      console.log("postData", postData);
       setFeedCollection(postData);
     }
     callBack();
