@@ -16,11 +16,11 @@ function FeedCollection() {
       querySnapshot.forEach((doc) =>
         postData.push({ ...doc.data(), id: doc.id })
       );
-      console.log("postData", postData);
+      // console.log("postData", postData);
       setFeedCollection(postData);
     }
     callBack();
-  }, [feedCollection, setFeedCollection]);
+  }, []);
 
   return (
     <div className="py-4">

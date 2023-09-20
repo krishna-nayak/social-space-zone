@@ -18,7 +18,7 @@ function PostFeed({ post }) {
     await updateDoc(postRef, {
       paticipicare: [{ user: 1, name: "name", image: "image" }],
     });
-    console.log("postRef", postRef.data);
+    // console.log("postRef", postRef.data);
   };
   return (
     <div id="post" className="rounded mb-3 border shadow">
