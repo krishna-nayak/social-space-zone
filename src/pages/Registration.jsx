@@ -74,6 +74,8 @@ function Registration() {
             email,
             city,
             uid: user.uid,
+            image:
+              "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fdefault-image&psig=AOvVaw1vM0zOFeZuxeesC6rlMhbG&ust=1695317545643000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNi2kJPcuYEDFQAAAAAdAAAAABAJ",
           });
         })
         .catch((error) => {

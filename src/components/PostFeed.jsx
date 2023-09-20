@@ -24,8 +24,8 @@ function PostFeed({ post }) {
     <div id="post" className="rounded mb-3 border shadow">
       <div className="d-flex align-items-center gap-2 mb-3">
         <img
-          src={post.user.image}
-          alt={post.user.username}
+          src={post.user?.image}
+          alt={post.user?.username}
           id="profile-img"
           width="50"
           height="50"
@@ -33,15 +33,15 @@ function PostFeed({ post }) {
 
         <div className="">
           <div id="user-name" className="fw-bold" style={{ fontSize: "12px" }}>
-            {post.user.name}
+            {post.user?.name}
           </div>
           <div id="location" style={{ fontSize: "10px" }}>
-            {post.user.location}
+            {post.user?.location}
           </div>
         </div>
       </div>
       <img
-        src={post.image_url || post.event.image}
+        src={post?.image_url || post.event?.image}
         alt="post"
         id="image"
         width="400"
@@ -52,20 +52,20 @@ function PostFeed({ post }) {
         <div>{user && <LikesOnPost id={post.id} likes={post.likes} />}</div>
         <div className="m-0">
           <p className="m-0 fw-bold">
-            {post.event_name ||
-              post.event.name ||
+            {post?.event_name ||
+              post?.event?.name ||
               "Don't have any event name !!!"}
           </p>
           <p className="mb-3" style={{ fontSize: "14px" }}>
             <i className="fa-solid fa-location-dot" />
             <span className="ms-1">
-              {post.location || post.event.location || "Don't Known"}
+              {post?.location || post.event?.location || "Don't Known"}
             </span>
           </p>
         </div>
 
         <p style={{ fontSize: "12px" }} className="lh-sm">
-          {post.event.description}
+          {post.event?.description}
         </p>
       </div>
 
