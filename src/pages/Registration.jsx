@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 import { validateEmail, validatePassword } from "../utils/validation";
 import { auth, db } from "../firebase";
@@ -68,7 +68,7 @@ function Registration() {
           // eslint-disable-next-line no-shadow
           const { user } = userCredential;
           console.log(user);
-          await addDoc(collection(db, "users"), {
+          await setDoc(doc(db, "users", email), {
             firstName,
             lastName,
             email,

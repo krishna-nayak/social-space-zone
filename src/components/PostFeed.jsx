@@ -41,7 +41,7 @@ function PostFeed({ post }) {
         </div>
       </div>
       <img
-        src={post.event.image}
+        src={post.image_url || post.event.image}
         alt="post"
         id="image"
         width="400"
@@ -51,10 +51,16 @@ function PostFeed({ post }) {
       <div>
         <div>{user && <LikesOnPost id={post.id} likes={post.likes} />}</div>
         <div className="m-0">
-          <p className="m-0 fw-bold">{post.event.name}</p>
+          <p className="m-0 fw-bold">
+            {post.event_name ||
+              post.event.name ||
+              "Don't have any event name !!!"}
+          </p>
           <p className="mb-3" style={{ fontSize: "14px" }}>
             <i className="fa-solid fa-location-dot" />
-            <span className="ms-1">{post.event.location}</span>
+            <span className="ms-1">
+              {post.location || post.event.location || "Don't Known"}
+            </span>
           </p>
         </div>
 

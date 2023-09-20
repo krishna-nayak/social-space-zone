@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { Button, Modal } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { db } from "../firebase";
+import { selectUser } from "../slice/features/user/userSlice";
 
 function PostInputModal({ show, setShow }) {
+  const user = useSelector(selectUser);
   const [postData, setPostData] = useState({
     event_name: "",
     description: "",
@@ -40,7 +43,7 @@ function PostInputModal({ show, setShow }) {
       return;
     }
     console.log(postData);
-    await addDoc(collection(db, "posts"), {
+    await addDoc(collection(db, "users", user.email, "posts"), {
       user: {
         id: 1,
         name: "Nayak 2",
@@ -66,6 +69,7 @@ function PostInputModal({ show, setShow }) {
       },
       ...postData,
     });
+
     resetData();
     handleClose();
     window.location.reload();
